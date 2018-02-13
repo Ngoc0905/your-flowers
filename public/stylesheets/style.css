@@ -1,0 +1,69 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.main{
+  padding-top: 100px;
+}
+
+img {
+  width: 150px;
+  height: 200px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#single-product{
+  padding: 20px;
+}
+#map {
+  padding: 20%;
+  height: calc(100vh - 150px);
+  margin-top: 30px;
+  width: 100%;
+}
+
+#store-info {
+  text-align: center;
+}
+
+.fleft  { float: left; }
+.fright { float: right; }
+.clear  { clear: both; }
+
+.hidden {
+  display: none;
+}
+
+.flag-red,
+.flag-yellow,
+.flag-green {
+  border: 0;
+  background: url(/images/flag.png) 0 0 no-repeat transparent;
+  cursor: pointer;
+  height: 65px;
+  outline: 0;
+  width: 65px;
+}
+
+.flag-red:hover,
+.flag-red.selected {
+  background: url(/images/red-flag.png) 6px -4px no-repeat transparent;
+}
+
+.flag-yellow:hover,
+.flag-yellow.selected {
+  background: url(/images/yellow-flag.png) 6px -4px no-repeat transparent;
+}
+
+.flag-green:hover,
+.flag-green.selected {
+  background: url(/images/green-flag.png) 6px -4px no-repeat transparent;
+}
+
+.date-container {
+  margin-top: 10px;
+}
