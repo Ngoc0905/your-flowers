@@ -27,3 +27,11 @@ function initMap() {
     }
   });
 }
+
+
+// window.onload = function () {
+//   document.getElementById('inputGroupSelect01').onchange = function () {
+//     console.log(this.value);
+//     window.location.href = "/celebration/";
+//   };
+// };

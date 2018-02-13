@@ -10,13 +10,12 @@
     <div class="col-sm-12 col-lg-3">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Filter</label>
+          <label class="input-group-text" for="inputGroupSelect01">Sort</label>
         </div>
         <select class="custom-select" id="inputGroupSelect01">
           <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="1">Price: ascending</option>
+          <option value="2">Price: descending</option>
         </select>
       </div>
     </div>
@@ -28,94 +27,18 @@
     <div class="row">
       <% for(var i = 0; i < bouquets.length; i++) { %>
         <div class="col-sm-12 col-lg-3" id="single-product">
-          <div class="education-block">
-            <h5>
-              <%= bouquets[i].name %>
-            </h5>
-            <img src="<%= bouquets[i].images[0].link %>" alt="rose">
-          </div>
+          <a href="/flowers/<%= bouquets[i]._id %>">
+            <div class="education-block">
+              <h5>
+                <%= bouquets[i].name %>
+              </h5>
+              <img src="<%= bouquets[i].images[0].link %>" alt="rose">
+            </div>
+          </a>
         </div>
         <% } %>
-          <!-- <div class="col-sm-12 col-lg-3" id="single-product">
-            <div class="education-block">
-              <h5>Rose Elegance</h5>
-              <img src="/images/rose-birthday.jpg" alt="rose">
-            </div>
-          </div>
-          <div class="col-sm-12 col-lg-3" id="single-product">
-            <div class="education-block">
-              <h5>Sunset </h5>
-              <img src="/images/mix-special.jpg" alt="rose">
-            </div>
-          </div>
-          <div class="col-sm-12 col-lg-3" id="single-product">
-            <div class="education-block">
-              <h5>Rose mix</h5>
-              <img src="/images/mix2-special.jpg" alt="rose">
-            </div>
-          </div>
-          <div class="col-sm-12 col-lg-3" id="single-product">
-            <div class="education-block">
-              <h5>Rose mix</h5>
-              <img src="/images/rose-special.jpg" alt="rose">
-            </div>
-          </div> -->
     </div>
   </div>
-  <!-- <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose Elegance</h5>
-          <img src="/images/rose-birthday.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Sunset </h5>
-          <img src="/images/mix-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img src="/images/mix2-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img src="/images/rose-special.jpg" alt="rose">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose Elegance</h5>
-          <img src="/images/rose-birthday.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Sunset </h5>
-          <img src="/images/mix-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img src="/images/mix2-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img src="/images/rose-special.jpg" alt="rose">
-        </div>
-      </div>
-    </div>
-  </div> -->
 </section>
+
+<script src="/javascripts/main.js"></script>
