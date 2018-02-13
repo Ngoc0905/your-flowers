@@ -1,0 +1,17 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const CatalogSchema = new Schema({
+    alias: {
+        type: String,
+        required: true
+    },
+    name: String,
+    bouquets: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Bouquet'
+    }]
+});
+
+const Catalog = mongoose.model("Catalog", CatalogSchema);
+module.exports = Catalog;
