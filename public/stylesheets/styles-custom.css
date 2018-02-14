@@ -1,0 +1,418 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+body {
+    font-family: 'Raleway', Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: #fff
+}
+
+.container {
+    background: #beb19e;
+    background: rgba(190, 177, 158, 0.75);
+}
+
+.cke_show_borders {
+    background: rgba(190, 177, 158, 0.75);
+    max-width: 1140px;
+}
+
+.highlight {
+    background: #f5f3ed;
+}
+
+a,
+.catNavigator dt {
+    color: #a74b50
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #4E4C4C;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fff;
+    font-family: 'Raleway', Tahoma, Geneva, sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'Raleway', serif;
+    color: #fff
+}
+
+.cartHeader,
+.confirmTell,
+#footer dt,
+.orderSummaryText .header,
+.confirmBoxes h2 {
+    color: #a74b50;
+    font-family: Carme, Tahoma, Geneva, sans-serif;
+}
+
+strong,
+b {
+    font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+    body {
+        background: #cbc2b1;
+    }
+}
+
+.head-container {
+    border-bottom: 4px solid #dcdcdc;
+    padding: 4px 0;
+    background: #beb19e;
+}
+
+.topnav-container,
+.navbar-default {
+    background: none
+}
+
+.topbanner-container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.addressData a,
+.addressData a:visited {
+    color: #fff
+}
+
+.addressData a:hover {
+    color: #a74b50
+}
+
+/** nav bar **/
+
+.navbar-brand {
+    margin-top: 60px;
+    height: 200px;
+    width: 100%;
+}
+
+.navbar-default {
+    border-color: #99a285;
+    border-radius: 0px;
+    border: 0px solid #444;
+    border-right: none;
+    border-left: none;
+    border-top: none
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+    font-size: 14px;
+    display: inline-block
+}
+
+.navbar-default .navbar-nav>li>a.current,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #a74b50;
+}
+
+.navbar-right {
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px
+}
+
+.navbar-nav>li {
+    float: none;
+    display: inline
+}
+
+.navbar-header {
+    float: none;
+    margin-top: 70px;
+    background: url(/images/outdoor-patio-office-002.jpg) no-repeat 0 20px;
+    background-size: cover;
+}
+
+.navbar-nav {
+    border-top: 0px solid #DADADA;
+    border-bottom: 1px solid #dcdcdc;
+    list-style: none;
+    text-align: center
+}
+
+@media (max-width: 414px) {
+    .navbar-header {
+        margin-top: 120px;
+        background: url(/images/outdoor-patio-office-002.jpg) no-repeat 0 20px;
+        margin-top: 55px;
+    }
+}
+
+/** Left Nav **/
+
+.catNavigator dd,
+.catNavigator a:link,
+.catNavigator a:visited {
+    color: #4E4C4C
+}
+
+.catNavigator a:hover,
+.catNavigator a:focus,
+.catNavigator a.current {
+    color: #a74b50;
+    text-decoration: none
+}
+
+.catNavigator dt {
+    padding: 10px;
+    color: #dcdcdc;
+    max-width: 80%;
+}
+
+/** buttons **/
+
+.btn-primary {
+    background-image: none;
+    background-color: #dcdcdc;
+    color: #fff;
+    border: 1px solid #c3c0c0;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-image: none;
+    background-color: #c3c0c0;
+    border: 1px solid #c3c0c0;
+}
+
+.btn-header {
+    border-radius: 0px;
+    border: 1px solid #DADADA;
+}
+
+.btn-header:hover {
+    background: #000;
+    color: #fff
+}
+
+a.btn-header:hover {
+    color: #fff
+}
+
+.btn-default {
+    background-image: none;
+    background-color: #474949;
+    border: 1px solid #474949
+}
+
+.btn-default:hover {
+    background-image: none;
+    background-color: #979999;
+    border: 1px solid #474949
+}
+
+.singleBanner {
+    margin: 0px 12px;
+}
+
+/** Designs **/
+
+.panel {
+    background: #f5f3ed;
+    border: 1px solid #f5f3ed;
+}
+
+.panel:hover {
+    background: #f5f3ed;
+    border: 1px solid #dcdcdc;
+}
+
+.designButton:hover,
+.designButton:focus,
+.designItems,
+.catImages:hover {
+    background: #f5f3ed;
+    border: 1px solid #dcdcdc;
+    color: #4E4C4C;
+    text-decoration: none
+}
+
+.newsPanel:hover {
+    background: #f5f3ed;
+    border: 1px solid #dcdcdc;
+    color: #4E4C4C;
+    text-decoration: none
+}
+
+h1.title {
+    color: #4E4C4C;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0 20px 0
+}
+
+h2.title {
+    color: #4E4C4C;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0
+}
+
+h1.title::before,
+h1.title::after,
+h2.title::before,
+h2.title::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #DADADA;
+}
+
+h1.title::before,
+h2.title::before {
+    margin-right: .65em;
+}
+
+h1.title::after,
+h2.title::after {
+    margin-left: .65em;
+}
+
+@media screen and (min-width: 992px) {
+    .columns {
+        -moz-column-count: 3;
+        /* Firefox */
+        -webkit-column-count: 3;
+        /* Safari and Chrome */
+        column-count: 3;
+        width: 600px;
+    }
+}
+
+/***** AMENDS BY MARK AUG 2015 *****/
+
+/*size of header contact icons */
+
+.fa-envelope,
+.fa-phone-square {
+    font-size: 21px !important
+}
+
+/* search box */
+
+#collapseSearch .well {
+    background: #444;
+    border: 1px solid #333;
+}
+
+/* navbar-toggle */
+
+.navbar-toggle {
+    border-color: #dddddd;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #cccccc;
+}
+
+.dropdown-header {
+    color: #000
+}
+
+.dropdown-menu {
+    background: #f5f3ed
+}
+
+.dropdown-menu>li>a,
+.dropdown-menu>li>a:visited {
+    color: #a74b50
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    background: #f0f0f0;
+    color: #000
+}
+
+.dropdown-menu .divider {
+    background-color: #f5f3ed
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    color: #e93395
+}
+
+.homepanel {
+    background: #f5f3ed;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.date-disp-square-sm {
+    background-color: #e93395;
+    border: 1px solid #e93395
+}
+
+.newsH1 {
+    padding: 35px 0 15px 0;
+    color: #fff
+}
+
+/** Footer **/
+
+.footerContainer {
+    border-top: 4px solid #dcdcdc;
+    background: #beb19e;
+    color: #fff
+}
+
+#footer a:link,
+#footer a:visited {
+    color: #fff
+}
+
+#footer a:hover {
+    color: #a74b50
+}
+
+#socialShare {
+    margin-top: 30px
+}
+
+.mosaicflow__item {
+    margin: 10px 10px 0px 0px;
+}
+
+.galleryCell .panel,
+.galleryCell,
+.galleryCell .panel-default {
+    height: 250px;
+    margin-bottom: 18px
+}
+
+.galleryCell img {
+    max-height: 220px
+}
+
+#content {
+    margin-top: 20px
+}
+
+.confirmBoxes h3,
+.confirmBoxes p,
+.orderComplete,
+.orderComplete h2 {
+    color: #444;
+}

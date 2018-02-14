@@ -10,78 +10,27 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    
-        <link rel="stylesheet" href="/stylesheets/style.css">
-      
-    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyDc6F8eg62zg1bApZdZ2plOQymVwoJA51g">
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/vendors/maplace.min.js"></script>
+
+    <script src="/javascripts/main.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/styles-custom.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">Your Flowers</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/stores">Stores</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        Celebration
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/celebrations/specialdays">Special days</a>
-                        <a class="dropdown-item" href="/celebrations/congratulation">Congratulation</a>
-                        <a class="dropdown-item" href="/celebrations/wedding">Wedding</a>
-                        <a class="dropdown-item" href="/celebrations/launchday">Launch day</a>
-                        <a class="dropdown-item" href="/celebrations/funeral">Funeral</a>
-                        <a class="dropdown-item" href="/celebrations/other">Other</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        Daily Flowers
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Compagny</a>
-                        <a class="dropdown-item" href="#">Home</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Special-price</a>
-                </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Search
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" id="btn-search" type="submit">Search</button>
-                    </form>
-                    <a class="dropdown-item" href="#">Price</a>
-                    <a class="dropdown-item" href="#">Celebration</a>
-                    <a class="dropdown-item" href="#">Color</a>
-                </div>
-            </li>
-            </ul>
-
+    <!-- 
             <ul class="navbar-nav">
                 <% if (!user) { %>
                     <li class="nav-item">
@@ -100,11 +49,201 @@
                             <a class="nav-link" href="/logout">Logout</a>
                         </li>
                         <% } %>
-            </ul>
 
-            
+                            <li class="nav-item cart">
+                                <a href="#" class="nav-link">
+                                    <div>
+                                        <span>
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </span>
+                                        <span class="cart-item-quantity">0</span>
+                                    </div>
+                                </a>
+                            </li>
+            </ul>
+    </nav> -->
+
+    <div class="container-fluid navbar-fixed-top head-container homepage page1">
+        <div class="container-fluid ">
+            <div class="page-header">
+                <div class="row addressData">
+                    <div class="col-xs-6 col-sm-3">
+                    </div>
+                    <div class="col-xs-6 col-sm-9 text-right">
+                        <ul class="list-inline addressData-right">
+                            <li>
+                                <span id="addTel">
+                                    <a href="/user-login.htm">login</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span id="addTel">
+                                    <a href="tel:0207 384 1443">
+                                        <i class="fa fa-phone-square"></i>
+                                        <span class="hidden-xs">0207 384 1443</span>
+                                    </a>
+                                </span>
+                            </li>
+                            <li>
+                                <span id="addEmail">
+                                    <a href="mailto:admin@strudwickflowers.co.uk">
+                                        <i class="fa fa-envelope"></i>
+                                        <span class="hidden-xs">admin@strudwickflowers.co.uk</span>
+                                    </a>
+                                </span>
+                            </li>
+                            <li>
+                                <a class="btn btn-header" href="/cart">
+                                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                    <span id="cart-item-quantity">0</span>
+                                </a>
+                            </li>
+                            <li style="padding-left:3px;">
+                                <a class="btn btn-header" data-toggle="collapse" href="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobilenav" aria-expanded="false"
+                                aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="collapse" id="collapseSearch">
+                                <div class="well">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" name="searchBy" id="searchBy" class="form-control" placeholder="Search">
+                                            <div class="input-group-addon">
+                                                <a href="javascript:goToPage();">go</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TESTING THE MOBILE DROP DOWN -->
+                            <div id="mobilenav" class="collapse">
+                                <nav class="">
+                                    <div>
+                                        <ul class="mobile-nav">
+                                            <li class="page1">
+                                                <a class="current" title="Home" href="/">Home</a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Celebrations
+                                                    <span class="caret"></span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="/celebrations/specialdays">Special days</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/celebrations/congratulation">Congratulation</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/celebrations/wedding">Wedding</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/celebrations/launchday">Launch day</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/celebrations/funeral">Funeral</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/celebrations/other">Other</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daily Flowers
+                                                    <span class="caret"></span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="#">Company</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Home</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="page4">
+                                                <a title="Wedding Flowers" href="#">Special price</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--/.nav-collapse -->
+                                </nav>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END OF MOBILE DROP DOWN TEST -->
+            </div>
         </div>
-    </nav>
+    </div>
+    <div class="container-fluid topnav-container">
+        <div class="container ">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="page1">
+                            <a title="Home" href="/">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Celebrations
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/celebrations/specialdays">Special days</a>
+                                </li>
+                                <li>
+                                    <a href="/celebrations/congratulation">Congratulation</a>
+                                </li>
+                                <li>
+                                    <a href="/celebrations/wedding">Wedding</a>
+                                </li>
+                                <li>
+                                    <a href="/celebrations/launchday">Launch day</a>
+                                </li>
+                                <li>
+                                    <a href="/celebrations/funeral">Funeral</a>
+                                </li>
+                                <li>
+                                    <a href="/celebrations/other">Other</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daily Flowers
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Company</a>
+                                </li>
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="page4">
+                            <a href="#">Special price</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
     <%- body %>
 </body>
 
