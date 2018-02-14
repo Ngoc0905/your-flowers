@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Bouquet = require('../models/bouquet');
 const Catalog = require('../models/catalog');
 
+
 mongoose.connect('mongodb://localhost/yourflowers');
 
 Catalog.remove({}, (err) => {
@@ -12,8 +13,13 @@ Catalog.remove({}, (err) => {
             alias: 'specialdays',
             name: 'Special days'
         });
+        var catalog2 = new Catalog({
+            alias: 'congratulation',
+            name: 'Congratulation'
+        });
     
-        Catalog.create(catalog, (err) => {
+    
+        Catalog.create([catalog, catalog2], (err) => {
             var bouquet1 = new Bouquet({
                 name: 'Rose Elegance',
                 description: '',
@@ -72,13 +78,25 @@ Catalog.remove({}, (err) => {
                 catalog.bouquets.push(bouquet2._id);
                 catalog.bouquets.push(bouquet3._id);
                 catalog.bouquets.push(bouquet4._id);
+
+                catalog2.bouquets.push(bouquet1._id);
+                catalog2.bouquets.push(bouquet2._id);
+                catalog2.bouquets.push(bouquet3._id);
+                catalog2.bouquets.push(bouquet4._id);
+
     
                 catalog.save();
+                catalog2.save();
             });
         });
      });
     
 });
+
+
+
+
+
 
 
 

@@ -1,37 +1,12 @@
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {
-      lat: -33.866,
-      lng: 151.196
-    },
-    zoom: 15
-  });
+$(function () {
+    var order = JSON.parse(localStorage.getItem('preOrder'));
 
-  var infowindow = new google.maps.InfoWindow();
-  var service = new google.maps.places.PlacesService(map);
-
-  service.getDetails({
-    placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
-  }, function (place, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-      });
-      google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-          'Place ID: ' + place.place_id + '<br>' +
-          place.formatted_address + '</div>');
-        infowindow.open(map, this);
-      });
+    if (order) {
+        var allFlowers = order.reduce((a, b) => {
+            return {quantity: a.quantity + b.quantity};
+        }).quantity;
+        $('#cart-item-quantity').text(allFlowers);
+    } else {
+        $('#cart-item-quantity').text(0);
     }
-  });
-}
-
-
-// window.onload = function () {
-//   document.getElementById('inputGroupSelect01').onchange = function () {
-//     console.log(this.value);
-//     window.location.href = "/celebration/";
-//   };
-// };
+});
