@@ -24,7 +24,7 @@ router.get('/daily-flowers/:pageName', (req, res, next) => {
     });
 });
 
-router.get('/flowerspage/:id', (req, res, next) => {
+router.get('/bouquetpage/:id', (req, res, next) => {
     //Get flower detail from database
     Bouquet.findById(req.params.id, (err, bouquet) => {
         console.log(bouquet);
@@ -34,13 +34,12 @@ router.get('/flowerspage/:id', (req, res, next) => {
     });
 });
 
-router.get('/flowers/:id', (req, res, next) => {
+router.get('/bouquets/:id', (req, res, next) => {
     //Get flower detail from database
     Bouquet.findById(req.params.id, (err, bouquet) => {
-        console.log(bouquet);
-        return res.render('pages/detail', {
-            bouquet: bouquet
-        });
+        if(err) return next(err);
+
+        return res.json(bouquet);
     });
 });
 
