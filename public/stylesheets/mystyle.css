@@ -29,10 +29,10 @@
     height: 100%;
 }
 
-<<<<<<< HEAD
 .slogan img{
     padding-bottom: 50px;
-=======
+}
+
 .btn-default {
     color: #fff;
 }
@@ -43,5 +43,4 @@
 
 input[type='checkbox'].error{
     outline: 1px solid #f00;
->>>>>>> 7d058d026a7fc31bdc4c476acd427eb8c122f7c7
 }
