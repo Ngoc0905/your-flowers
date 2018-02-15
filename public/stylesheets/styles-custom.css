@@ -94,8 +94,7 @@ b {
 /** nav bar **/
 
 .navbar-brand {
-    margin-top: 60px;
-    height: 200px;
+    height: 500px;
     width: 100%;
 }
 
@@ -133,9 +132,7 @@ b {
 
 .navbar-header {
     float: none;
-    margin-top: 70px;
-    background: url(/images/outdoor-patio-office-002.jpg) no-repeat 0 20px;
-    background-size: cover;
+    margin-top: 47px;
 }
 
 .navbar-nav {
@@ -148,7 +145,7 @@ b {
 @media (max-width: 414px) {
     .navbar-header {
         margin-top: 120px;
-        background: url(/images/outdoor-patio-office-002.jpg) no-repeat 0 20px;
+        background: url('/images/Espresso Shot.png') no-repeat 0 20px;
         margin-top: 55px;
     }
 }

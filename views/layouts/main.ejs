@@ -24,8 +24,8 @@
 
     <script src="/javascripts/main.js"></script>
 
-    <link rel="stylesheet" href="/stylesheets/styles-custom.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/styles-custom.css">
     <link rel="stylesheet" href="/stylesheets/mystyle.css">
 </head>
 
@@ -68,33 +68,68 @@
             <div class="page-header">
                 <div class="row addressData">
                     <div class="col-xs-6 col-sm-3">
+                        <ul class="list-inline addressData-right">
+                            <li class="page1">
+                                <a title="Home" href="/">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daily Flowers
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Company</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Home</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Celebrations
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/celebrations/specialdays">Special days</a>
+                                    </li>
+                                    <li>
+                                        <a href="/celebrations/congratulation">Congratulation</a>
+                                    </li>
+                                    <li>
+                                        <a href="/celebrations/wedding">Wedding</a>
+                                    </li>
+                                    <li>
+                                        <a href="/celebrations/launchday">Launch day</a>
+                                    </li>
+                                    <li>
+                                        <a href="/celebrations/funeral">Funeral</a>
+                                    </li>
+                                    <li>
+                                        <a href="/celebrations/other">Other</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="page4">
+                                <a href="#">Special price</a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="col-xs-6 col-sm-9 text-right">
                         <ul class="list-inline addressData-right">
                             <li>
                                 <span id="addTel">
-                                    <a href="/user-login.htm">login</a>
+                                    <a href="/login">Login</a>
                                 </span>
                             </li>
-                            <li>
-                                    <span id="admin">
-                                        <a href="/create-bouquet">Admin</a>
-                                    </span>
-                                </li>
                             <li>
                                 <span id="addTel">
-                                    <a href="tel:0207 384 1443">
-                                        <i class="fa fa-phone-square"></i>
-                                        <span class="hidden-xs">0207 384 1443</span>
-                                    </a>
+                                    <a href="/signup">Signup</a>
                                 </span>
                             </li>
                             <li>
-                                <span id="addEmail">
-                                    <a href="mailto:admin@strudwickflowers.co.uk">
-                                        <i class="fa fa-envelope"></i>
-                                        <span class="hidden-xs">admin@strudwickflowers.co.uk</span>
-                                    </a>
+                                <span id="admin">
+                                    <a href="/create-bouquet">Admin</a>
                                 </span>
                             </li>
                             <li>
@@ -189,67 +224,85 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid topnav-container">
-        <div class="container ">
-            <nav class="navbar navbar-default">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">
-                        
-                    </a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="page1">
-                            <a title="Home" href="/">Home</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Celebrations
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="/celebrations/specialdays">Special days</a>
-                                </li>
-                                <li>
-                                    <a href="/celebrations/congratulation">Congratulation</a>
-                                </li>
-                                <li>
-                                    <a href="/celebrations/wedding">Wedding</a>
-                                </li>
-                                <li>
-                                    <a href="/celebrations/launchday">Launch day</a>
-                                </li>
-                                <li>
-                                    <a href="/celebrations/funeral">Funeral</a>
-                                </li>
-                                <li>
-                                    <a href="/celebrations/other">Other</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daily Flowers
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Company</a>
-                                </li>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="page4">
-                            <a href="#">Special price</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
     <%- body %>
+        <div class="container-fluid homepage page2 footerContainer">
+
+            <div class="container">
+                <div class="row" id="footer">
+                    <!-- <div class="col-md-4 text-center">
+                        <dl id="sitemap">
+                            <dt>Information</dt>
+                            <dd>
+                                <a title="Home" href="/">Home</a>
+                            </dd>
+                            <dd>
+                                <a title="Bouquets" href="/bouquets.htm">Bouquets</a>
+                            </dd>
+                            <dd>
+                                <a title="Wedding Flowers" href="/celebrations/">Wedding Flowers</a>
+                            </dd>
+                            <dd>
+                                <a title="Sympathy" href="/sympathy.htm">Sympathy</a>
+                            </dd>
+                            <dd>
+                                <a title="Flower Gallery" href="/flower-gallery.htm">Flower Gallery</a>
+                            </dd>
+                            <dd>
+                                <a title="About" href="/about.htm">About</a>
+                            </dd>
+                            <dd>
+                                <a title="Delivery" href="/delivery.htm">Delivery</a>
+                            </dd>
+                            <dd>
+                                <a title="Contact Us" href="/contact-us.htm">Contact Us</a>
+                            </dd>
+                        </dl>
+                    </div> -->
+                    <div class="col-md-6 text-center">
+
+                        <!-- Footer Address -->
+                        <dl class="footAddress">
+                            <dt>Contact Us</dt>
+                            <dd>35 Townmead Business Centre, William Morris Way
+                                <br>London
+                                <br>SW6 2SZ
+                                <br>
+                            </dd>
+                            <dd>0207 384 1443</dd>
+                            <dd>
+                                <a href="mailto:admin@strudwickflowers.co.uk">admin@strudwickflowers.co.uk</a>
+                            </dd>
+                            <dd class="footerSocial">
+                                <a href="https://www.facebook.com/strudwickflowers" title="Find us on Facebook" target="_blank" class="social">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/strudwickflowers" target="_blank" class="social">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <dl class="footLegal">
+                            <dt>Legal</dt>
+                            <dd>
+                                <a href="/terms-&amp;-conditions.htm" accesskey="8" title="Terms and Conditions">Terms and Conditions</a>
+                            </dd>
+                            <dd>
+                                <a href="/privacy-policy.htm" title="Privacy Policy">Privacy Policy</a>
+                            </dd>
+                            <dd>
+                                <a href="/cookie-policy.htm" title="Cookie Policy">Cookie Policy</a>
+                            </dd>
+                            <dd>Website created by&nbsp;
+                                <a href="http://www.floristpro.co.uk" target="_blank" rel="nofollow">floristPro</a>
+                            </dd>
+                            <dd>© Clayton Strudwick Flowers Ltd</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>

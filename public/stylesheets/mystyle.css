@@ -1,3 +1,30 @@
 .panel.panel-default.designButton{
     padding-bottom: 10px;
 }
+
+.page{
+    margin-top: 97px;
+}
+
+.page-name h1 {
+    margin-top: 0.6em;
+}
+
+.footerContainer{
+    margin-top: 50px;
+}
+
+.form{
+    padding: 0 0 15px;
+}
+
+.navbar-brand{
+    border-bottom: 1px solid #fff;
+    margin-bottom: 20px;
+}
+
+.navbar-brand img {
+    margin: 0 auto;
+    width: 800px;
+    height: 100%;
+}

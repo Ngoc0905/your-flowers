@@ -13,7 +13,7 @@ const MongoStore = require('connect-mongo')(session);
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/user.js');
 const bcrypt = require('bcrypt');
-const flash = require('connect-flash'); 
+const flash = require('connect-flash');
 
 mongoose.connect('mongodb://localhost/yourflowers');
 
@@ -23,23 +23,27 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // by default 'layout.ejs' is used, but if you want to specify your custom layout, just set layout property in express app
-app.set('layout','layouts/main');
+app.set('layout', 'layouts/main');
 app.use(layouts);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, "bower_components")));
 app.use(
   session({
-    secret:'yourflower',
-    resave:false,
+    secret: 'yourflower',
+    resave: false,
     saveUninitialized: true,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection
+    }),
   })
 );
 
@@ -57,8 +61,7 @@ app.use(flash());
 // Signing Up
 passport.use(
   'local-signup',
-  new LocalStrategy(
-    {
+  new LocalStrategy({
       passReqToCallback: true,
       usernameField: 'email',
     },
@@ -66,7 +69,10 @@ passport.use(
       // To avoid race conditions
       process.nextTick(() => {
         // Destructure the body
-        const { email, password } = req.body;
+        const {
+          email,
+          password
+        } = req.body;
         bcrypt.genSalt(14, (err, salt) => {
           if (err) return done(err);
           bcrypt.hash(password, salt, (err, hashedPass) => {
@@ -99,20 +105,25 @@ passport.use(
 
 passport.use(
   'local-login',
-  new LocalStrategy(
-    {
+  new LocalStrategy({
       usernameField: 'email',
     },
     (email, password, done) => {
-      User.findOne({ email }, (err, user) => {
+      User.findOne({
+        email
+      }, (err, user) => {
         if (err) return done(err);
         if (!user) {
-          return done(null, false, { message: 'Incorrect username' });
+          return done(null, false, {
+            message: 'Incorrect username'
+          });
         }
         bcrypt.compare(password, user.password, (err, isTheSame) => {
           if (err) return done(err);
           if (!isTheSame) {
-            return done(null, false, { message: 'Incorrect password' });
+            return done(null, false, {
+              message: 'Incorrect password'
+            });
           }
           return done(null, user);
         });
@@ -131,7 +142,7 @@ app.use((req, res, next) => {
 });
 
 
-app.use('/',require('./routes/index'));
+app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/', require('./routes/auth'));
 app.use('/', require('./routes/products'));
@@ -140,14 +151,14 @@ app.use('/', require('./routes/order'));
 app.use('/', require('./routes/create-bouquet'));
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
