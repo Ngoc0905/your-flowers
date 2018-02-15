@@ -1,11 +1,10 @@
-$(function () {
-    var order = JSON.parse(localStorage.getItem('preOrder'));
+// $(function () {
+//     $('.remove-from-cart-btn').click((e) => {
+//         console.log($(this).attr('class'));
+//     });
+// });
 
-    if (order && order.length) {
-        order.forEach((o) => {
-            axios.get('/flowers/' + o.id).then((response) => {
-                console.log(response);
-            });
-        });
-    }
-});
+function removeBouquet(btn) {
+    var id = btn.id.split('-')[1];
+    
+}
