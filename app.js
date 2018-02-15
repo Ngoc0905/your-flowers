@@ -137,6 +137,7 @@ app.use('/', require('./routes/auth'));
 app.use('/', require('./routes/products'));
 app.use('/stores', require('./routes/stores'));
 app.use('/', require('./routes/order'));
+app.use('/', require('./routes/create-bouquet'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

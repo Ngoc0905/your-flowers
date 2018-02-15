@@ -1,0 +1,28 @@
+<h1>Page Admin</h1>
+<h3>Create flower bouquet</h3>
+<form action="/bouquets" method="POST"enctype="multipart/form-data">
+    <div class="container">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="imageURL">Image</label>
+        <input type="file" name="imageURL">
+        <br>
+        <label for="prix">Prix</label>
+        <input type="text" name="prix" id="prix">
+        <br>
+        <label for="color">Color</label>
+        <input type="text" name="color" id="color">
+        <br>
+        <select class="custom-select" name="catalog" id="inputGroupSelect">
+            <option value="specialdays" selected>Special days</option>
+            <option value="congratulation">Congratulation</option>
+            <option value="wedding">Wedding</option>
+            <option value="launchday">Launch day</option>
+            <option value="funeral">Funeral</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+            <button type="submit">Create</button>
+    </div>
+</form>
