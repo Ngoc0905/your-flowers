@@ -16,51 +16,24 @@
     <div class="pageDesigns">
       <div class="designList">
         <div class="row desSelection">
-          <div class="col-sm-6 col-md-4 productCol">
-            <div class="panel panel-default designButton">
-              <div class="panel-body">
-                <a href="#" title="The Baker Street">
-                  <img class="img-responsive center-block" src="/images/rose-birthday.jpg" alt="The Baker Street">
-                  <span class="title">
-                    Elegant
-                  </span>
-                  <span class="price">
-                    100€
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 productCol">
-              <div class="panel panel-default designButton">
-                <div class="panel-body">
-                  <a href="#" title="The Baker Street">
-                    <img class="img-responsive center-block" src="/images/mix-special.jpg" alt="The Baker Street">
-                    <span class="title">
-                      Mix
-                    </span>
-                    <span class="price">
-                      120€
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 productCol">
+          <% bouquets.forEach(b => { %>
+            <div class="col-sm-6 col-md-3 productCol">
                 <div class="panel panel-default designButton">
                   <div class="panel-body">
-                    <a href="#" title="The Baker Street">
-                      <img class="img-responsive center-block" src="/images/mix2-special.jpg" alt="The Baker Street">
+                    <a href="/bouquetpage/<%= b._id %>" title="The Baker Street">
+                      <img class="img-responsive center-block" src="<%= b.images[0].link %>" alt="The Baker Street">
                       <span class="title">
-                        Deluxe
+                        <%= b.name %>
                       </span>
                       <span class="price">
-                        140€
+                        <%= b.price %>€
                       </span>
+                      <p>Package for 7 days</p>
                     </a>
                   </div>
                 </div>
               </div>
+          <% }) %>
         </div>
       </div>
     </div>

@@ -1,11 +1,53 @@
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <label class="input-group-text" for="inputGroupSelect01">Options</label>
+<div class="page">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 page-name">
+        <h1>Special price</h1>
+      </div>
     </div>
-    <select class="custom-select" id="inputGroupSelect01">
-      <option selected>Choose...</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
+    <div class="row special-price-bouquets">
+      <div class="col-sm-3">
+        <img src="/images/pvc_vase_26.jpg" alt="">
+      </div>
+      <div class="col-sm-3">
+        <img src="/images/mix-company.jpg" alt="">
+      </div>
+      <div class="col-sm-3">
+        <img src="/images/FlowerCups.jpg" alt="">
+      </div>
+      <div class="col-sm-3">
+        <img src="/images/cuc-company.jpg" alt="">
+      </div>
+    </div>
+    <div class="row special-price-bouquets">
+      <div class="col-sm-12 text-center">
+        <h2>Random flower price 80€</h2>
+        <button class="btn btn-default add-special-to-cart-btn">Buy</button>
+        <a class="btn btn-default" href="javascript: history.go(-1)">Back</a>
+        <input type="hidden" name="special-price-id" id="special-price-id" value="<%= bouquets[0]._id %>">
+      </div>
+    </div>
   </div>
+</div>
+
+<script>
+  $(".add-special-to-cart-btn").click(() => {
+    var flowerId = $("#special-price-id").val();
+    var order = JSON.parse(localStorage.getItem('preOrder'));
+    if (!order) {
+      order = [];
+    }
+    var selectedFlowerOrder = order.find((o) => o.id === flowerId);
+    if (selectedFlowerOrder) {
+      selectedFlowerOrder.quantity++;
+    } else {
+      order.push({
+        id: flowerId,
+        quantity: 1
+      });
+    }
+    localStorage.setItem('preOrder', JSON.stringify(order));
+
+    $('#cart-item-quantity').text(parseInt($('#cart-item-quantity').text()) + 1);
+  });
+</script>

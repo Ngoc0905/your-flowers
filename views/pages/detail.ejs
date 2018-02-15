@@ -1,12 +1,8 @@
 <div class="container content-container page">
     <div id="content">
         <div id="pageContent" class="clearfix">
-            <!--Left Menu -->
-            <div class="col-sm-3 highlight catNavigator hidden-xs" id="leftNavigator">
-
-            </div>
             <!-- Page Content -->
-            <div id="info" class="col-sm-9 contentLeft">
+            <div id="info" class="col-sm-12 contentLeft">
 
                 <div class="row" id="designBlock">
 
@@ -14,7 +10,12 @@
 
                         <div class="col-sm-12" id="cartMessage"></div>
 
-                        <div class="col-sm-6" id="detailLeft">
+
+                    </form>
+                </div>
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-sm-6">
+                        <div style="float: right;">
                             <h1>
                                 <%= bouquet.name %>
                             </h1>
@@ -25,31 +26,25 @@
                                 <div class="form-group">
                                     <div class="radio">
                                         <label>
-                                            €<%= bouquet.price %>
+                                            €
+                                            <%= bouquet.price %>
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            <p>
-                                <input type="submit" class="btn btn-primary btnspace" value="Buy">
+                            <span>
+                                <button type="button" class="btn btn-primary btnspace add-to-cart-btn" data-id="<%= bouquet.id %>">Buy</button>
                                 <a class="btn btn-default" href="javascript: history.go(-1)">Back</a>
-                                <input type="hidden" name="attrId" value="0">
-                            </p>
+                            </span>
                         </div>
-
-                        <div class="col-sm-6" id="detailRight">
-                            <p>
-                                <a class="preview image cboxElement" href="/upload/files/products/lg_20159127-the-covent-garden.jpg" title="The Covent Garden">
-                                    <img class="img-responsive mainImage" src="<%= bouquet.images[0].link %>" alt="The Covent Garden">
-                                </a>
-                            </p>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="col-sm-6">
+                        <img style="float: left;" class="mainImage" src="<%= bouquet.images[0].link %>" alt="The Covent Garden">
+                    </div>
                 </div>
                 <!-- end of design block -->
             </div>
-
         </div>
     </div>
-
 </div>
+<script src="/javascripts/order.js"></script>

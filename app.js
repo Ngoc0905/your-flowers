@@ -80,6 +80,7 @@ passport.use(
             const newUser = new User({
               email,
               password: hashedPass,
+              role: 'user'
             });
 
             newUser.save(err => {

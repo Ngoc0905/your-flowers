@@ -29,7 +29,7 @@
                                     <div class="row product">
                                         <div class="col-sm-4">
                                             <a href="/bouquetpage/<%= b._id %>" title="The Covent Garden">
-                                                <img class="img-responsive cartImage" src="<%= b.images[0].link %>" alt="The Covent Garden">
+                                                <img class="img-responsive mainImage" src="<%= b.images[0].link %>" alt="The Covent Garden">
                                             </a>
                                         </div>
                                         <div class="col-sm-8">
@@ -50,9 +50,9 @@
                                     <span class="bouquet-quantity">
                                         <%= b.quantity %>
                                     </span>
-                                    <button type="button" class="btn btn-danger remove-from-cart-btn" onclick="removeBouquet(this)" id="flower-<%= b._id %>">
+                                    <!-- <button type="button" class="btn btn-danger remove-from-cart-btn" onclick="removeBouquet(this)" id="flower-<%= b._id %>">
                                         <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
+                                    </button> -->
                                 </div>
                                 <div class="col-sm-2 price">
                                     <strong>

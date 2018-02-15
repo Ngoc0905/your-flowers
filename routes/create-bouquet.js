@@ -24,10 +24,7 @@ router.get('/create-bouquet', ensureLoggedIn(), checkRole('admin'), (req, res, n
     return res.render('admin/create-bouquet');
 });
 
-router.post('/bouquets', ensureLoggedIn(), checkRole('admin'), (req, res, next) => {
-    if (req.user.role !== 'admin')
-        res.redirect('/');
-}, upload.single('imageURL'), (req, res, next) => {
+router.post('/bouquets', ensureLoggedIn(), checkRole('admin'), upload.single('imageURL'), (req, res, next) => {
     Catalog.findOne({
         alias: req.body.catalog
     }, (err, catalog) => {

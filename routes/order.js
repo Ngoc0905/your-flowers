@@ -34,6 +34,19 @@ router.get('/cart', (req, res, next) => {
             });
         }
 
+        // if(req.query.ids.split(',').indexOf('special') !== -1)
+        //     vm.bouquets.push({
+        //         quantity: req.query.quantities.split(',')[req.query.ids.split(',').indexOf('special')],
+        //         name: 'Special price',
+        //         description: '',
+        //         price: 80,
+        //         images: [
+        //             {
+        //                 link: '/images/slogan2.png'
+        //             }
+        //         ]
+        //     });
+
         return res.render('pages/cart', vm);
     });
 });

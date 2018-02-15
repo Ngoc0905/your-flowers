@@ -7,6 +7,11 @@ const CatalogSchema = new Schema({
         required: true
     },
     name: String,
+    type: {
+        type: String,
+        enum: ['daily', 'celebrations'],
+        required: true
+    },
     bouquets: [{
         type: Schema.Types.ObjectId,
         ref: 'Bouquet'

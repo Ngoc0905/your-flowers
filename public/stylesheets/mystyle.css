@@ -79,3 +79,24 @@ img.grayscale {
         display: none;
     }
 }
+
+.special-price-bouquets {
+    margin-bottom: 20px;
+}
+
+.special-price-bouquets img{
+    width: 100%;
+}
+
+.footerContainer .container {
+    background: #58657B;
+}
+
+.create-bouquet-form{
+    padding-bottom: 20px;
+}
+
+.mainImage {
+    width: 220px;
+    height: 300px;
+}
