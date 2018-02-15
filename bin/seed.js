@@ -23,6 +23,7 @@ Catalog.remove({}, (err) => {
             var bouquet1 = new Bouquet({
                 name: 'Rose Elegance',
                 description: '',
+                price: 50,
                 images:[
                     {
                         link: '/images/rose-birthday.jpg'
@@ -35,6 +36,7 @@ Catalog.remove({}, (err) => {
             var bouquet2 = new Bouquet({
                 name: 'Sunset',
                 description: '',
+                price: 50,
                 images:[
                     {
                         link: '/images/mix-special.jpg'
@@ -47,6 +49,7 @@ Catalog.remove({}, (err) => {
             var bouquet3 = new Bouquet({
                 name: 'Rose mix',
                 description: '',
+                price: 40,
                 images:[
                     {
                         link: '/images/mix2-special.jpg'
@@ -59,6 +62,7 @@ Catalog.remove({}, (err) => {
             var bouquet4 = new Bouquet({
                 name: 'Rose mix',
                 description: '',
+                price: 45,
                 images:[
                     {
                         link: '/images/rose-special.jpg'

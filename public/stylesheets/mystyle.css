@@ -28,3 +28,15 @@
     width: 800px;
     height: 100%;
 }
+
+.btn-default {
+    color: #fff;
+}
+
+.cartErrors {
+    display: none;
+}
+
+input[type='checkbox'].error{
+    outline: 1px solid #f00;
+}

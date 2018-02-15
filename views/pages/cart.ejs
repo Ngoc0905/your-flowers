@@ -3,7 +3,11 @@
         <div id="pageContent" class="clearfix">
             <div id="info" class="col-sm-12 contentFull">
 
-                <form id="shoppingBasket" name="cart" method="post" action="shoppingCart.htm" novalidate="novalidate">
+                <ul class="cartErrors">
+                    
+                </ul>
+
+                <form id="shoppingBasket" name="cart" novalidate="novalidate">
                     <h1>Your Shopping Cart</h1>
                     <div class="row cartHeader">
                         <div class="col-sm-8">
@@ -20,42 +24,49 @@
                         <div class="row empty">Your cart is empty.</div>
                         <% } else {
                             bouquets.forEach(function(b) { %>
-                                <div class="row cartRow">
-                                    <div class="col-sm-8 item">
-                                        <div class="row product">
-                                            <div class="col-sm-4">
-                                                <a href="/bouquetpage/<%= b._id %>" title="The Covent Garden">
-                                                    <img class="img-responsive cartImage" src="<%= b.images[0].link %>" alt="The Covent Garden">
-                                                </a>
+                            <div class="row cartRow" id="bouquet-<%= b._id %>">
+                                <div class="col-sm-8 item">
+                                    <div class="row product">
+                                        <div class="col-sm-4">
+                                            <a href="/bouquetpage/<%= b._id %>" title="The Covent Garden">
+                                                <img class="img-responsive cartImage" src="<%= b.images[0].link %>" alt="The Covent Garden">
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="itemName">
+                                                <strong>
+                                                    <%= b.name %>
+                                                </strong>
                                             </div>
-                                            <div class="col-sm-8">
-                                                <div class="itemName">
-                                                    <strong><%= b.name %></strong>
-                                                </div>
-                                                <div class="message">
-                                                        <%= b.description %>
+                                            <div class="message">
+                                                <%= b.description %>
                                                     <br>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-2 quantity">
-                                        <label class="hidden-lg hidden-md hidden-sm">Quantity: </label> <%= b.quantity %>
-                                        <button type="button" class="btn remove-from-cart-btn" onclick="removeBouquet(this)" id="flower-<%= b._id %>">
-                                            <span class="glyphicon glyphicon-trash"></span>
-                                        </button>
-                                    </div>
-                                    <div class="col-sm-2 price">
-                                        <strong>£45.00</strong>
-                                    </div>
                                 </div>
+                                <div class="col-sm-2 quantity">
+                                    <label class="hidden-lg hidden-md hidden-sm">Quantity: </label>
+                                    <span class="bouquet-quantity">
+                                        <%= b.quantity %>
+                                    </span>
+                                    <button type="button" class="btn remove-from-cart-btn" onclick="removeBouquet(this)" id="flower-<%= b._id %>">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-2 price">
+                                    <strong>
+                                        <%= b.price %>
+                                    </strong>€
+                                </div>
+                            </div>
                             <% }) } %>
                                 <div class="row discountRow">
                                     <div class="col-sm-8"></div>
                                     <div class="col-sm-2 discountCol">
                                         Sub Total</div>
                                     <div class="col-sm-2 discountCol">
-                                        <strong>£0.00</strong>
+                                        <strong id="cart-total-price"></strong>
                                     </div>
                                 </div>
 
@@ -250,10 +261,11 @@
                                             <strong>Please note, you need at least one item in your basket to proceed to the checkout.</strong>
                                         </p>
                                         <div class="buttonSection">
-
-                                            <button class="cancel returnShopping btn btn-default">
-                                                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>&nbsp;continue shopping</button>
-
+                                            <a class="cancel returnShopping btn btn-default" href="/">
+                                                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>&nbsp;continue shopping</a>
+                                            <button class="btn btn-primary checkout" type="button" id="cart-checkout-btn">&nbsp;CHECKOUT&nbsp;
+                                                <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+                                            </button>
                                         </div>
                                         <p class="privacy">
                                             <small>* Please note, We will never release your personal details to any other companies.
@@ -263,7 +275,6 @@
                                             </small>
                                         </p>
                                     </div>
-
                                 </div>
                 </form>
             </div>

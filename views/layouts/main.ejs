@@ -117,21 +117,36 @@
                     </div>
                     <div class="col-xs-6 col-sm-9 text-right">
                         <ul class="list-inline addressData-right">
-                            <li>
-                                <span id="addTel">
-                                    <a href="/login">Login</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span id="addTel">
-                                    <a href="/signup">Signup</a>
-                                </span>
-                            </li>
-                            <li>
-                                <span id="admin">
-                                    <a href="/create-bouquet">Admin</a>
-                                </span>
-                            </li>
+                            <% if (!user) { %>
+                                <li>
+                                    <span>
+                                        <a href="/login">Login</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="/signup">Signup</a>
+                                    </span>
+                                </li>
+                            <% } else { %>
+                                <li>
+                                    <span>
+                                        <a href="/create-bouquet">Admin</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <a href="/profile">
+                                        <%= user.email %>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span>
+                                        <a href="/logout">Logout</a>
+                                    </span>
+                                </li>
+                            <% } %>
+                            
+                            
                             <li>
                                 <a class="btn btn-header" id="go-to-cart-btn" href="#">
                                     <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
