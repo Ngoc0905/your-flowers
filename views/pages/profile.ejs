@@ -1,0 +1,54 @@
+<div class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 pageName">
+                <h1>
+                    Profile
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default orders-history">
+                    <div class="panel-heading">History of orders</div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <th>Delivery date</th>
+                                <th>Total price</th>
+                            </tr>
+                            <% user.orders.forEach(o => { %>
+                                <tr>
+                                    <td>
+                                        <%= o.deliveryDate %>
+                                    </td>
+                                    <td>
+                                        <%= o.total %> euros</td>
+                                </tr>
+                                <% }) %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var clear = getParameterByName('clear');
+
+    if (clear) {
+        localStorage.removeItem('preOrder');
+        window.location.href = "/profile";
+    }
+</script>

@@ -7,7 +7,7 @@
                     
                 </ul>
 
-                <form id="shoppingBasket" name="cart" action="/cart" method="POST" onsubmit="return onCartSubmit(e)">
+                <form id="shoppingBasket" name="cart" action="/cart" method="POST">
                     <h1>Your Shopping Cart</h1>
                     <div class="row cartHeader">
                         <div class="col-sm-8">
@@ -59,8 +59,8 @@
                                         <%= b.price %>
                                     </strong>€
                                 </div>
-                                <input type="hidden" name="bouquet[][id]" value="<%= b._id %>">
-                                <input type="hidden" name="bouquet[][quantity]" value="<%= b.quantity %>">
+                                <input type="hidden" name="bouquet.ids" value="<%= b._id %>">
+                                <input type="hidden" name="bouquet.quantities" value="<%= b.quantity %>">
                             </div>
                             <% }) } %>
                                 <div class="row discountRow">

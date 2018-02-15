@@ -8,6 +8,7 @@ body {
 .container {
     background: #beb19e;
     background: rgba(190, 177, 158, 0.75);
+    padding-top: 20px;
 }
 
 .cke_show_borders {
@@ -69,7 +70,7 @@ b {
 .head-container {
     border-bottom: 4px solid #dcdcdc;
     padding: 4px 0;
-    background: #beb19e;
+    background: #58657b;
 }
 
 .topnav-container,
@@ -133,6 +134,7 @@ b {
 .navbar-header {
     float: none;
     margin-top: 47px;
+    position:center;
 }
 
 .navbar-nav {
@@ -225,6 +227,10 @@ a.btn-header:hover {
 .panel {
     background: #f5f3ed;
     border: 1px solid #f5f3ed;
+}
+.panel-body img{
+    width: 200px;
+    height:250px;
 }
 
 .panel:hover {

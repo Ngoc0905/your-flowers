@@ -1,9 +1,17 @@
-var express = require('express');
-var router = express.Router();
-var mongoose = require('mongoose');
-var Bouquet = require('../models/bouquet');
-var Order = require('../models/order');
-const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
+var bodyParser = require("body-parser");
+var styleParser = bodyParser.urlencoded({
+    extended: true
+});
+const Bouquet = require('../models/bouquet');
+const Order = require('../models/order');
+const User = require('../models/user');
+const {
+    ensureLoggedIn,
+    ensureLoggedOut
+} = require('connect-ensure-login');
 
 router.get('/cart', (req, res, next) => {
     const idStrings = req.query.ids.split(',');
@@ -30,35 +38,45 @@ router.get('/cart', (req, res, next) => {
     });
 });
 
-router.post('/cart', ensureLoggedIn(), (req, res, next) => {
+router.post('/cart', ensureLoggedIn(), styleParser, (req, res, next) => {
+    let bouquets = [];
+    if (typeof req.body['bouquet.ids'] === 'string') {
+        bouquets.push({
+            bouquet: req.body['bouquet.ids'],
+            quantity: req.body['bouquet.quantities'],
+        });
+    } else {
+        for (let i = 0; i < req.body['bouquet.ids'].length; i++) {
+            bouquets.push({
+                bouquet: req.body['bouquet.ids'][i],
+                quantity: req.body['bouquet.quantities'][i]
+            });
+        }
+    }
+
     var obj = {
         buyer: req.user._id,
         deliveryDate: req.body.deliveryDate,
         total: req.body.total,
-        bouquets: []
+        bouquets: bouquets
     };
 
-    req.body.bouquets.forEach(b => {
-        obj.bouquets.push({
-            quantity: b.quantity,
-            bouquet: b.id
-        });
-    });
+    var order = new Order(obj);
 
-    Order.create(new Order(obj), (err) => {
-        if(err) return next(err);
+    Order.create(order, (err) => {
+        if (err) return next(err);
 
         User.findById(req.user._id, (err, user) => {
-            if(err) return next(err);
+            if (err) return next(err);
 
-            if(!user) throw new Error('User not found');
+            if (!user) throw new Error('User not found');
 
             user.orders.push(order);
 
             user.save(err => {
-                if(err) return next(err);
+                if (err) return next(err);
 
-                return res.redirect('/profile');
+                return res.redirect('/profile?clear=true');
             });
         });
     });

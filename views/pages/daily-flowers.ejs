@@ -1,109 +1,69 @@
-<section class="container main">
-  <div class="row">
-    <div class="col-sm-12 col-lg-3">
-      <div class="">
-        <h2>Daily flowers</h2>
-      </div>
-    </div>
-    <div class="col-sm-12 col-lg-3">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Filter</label>
-        </div>
-        <select class="custom-select" id="inputGroupSelect01">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  <hr>
-</section>
-<section class="container" id="product">
-  <div class="container-fluid">
+<div class="page">
+  <section class="container main">
     <div class="row">
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose Elegance</h5>
-          <img id="flower" src="/images/rose-birthday.jpg" alt="rose">
-        </div>
+      <div class="col-sm-12 page-name">
+        <h1>
+          Daily flowers /
+          <%= pageName %>
+        </h1>
       </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Sunset </h5>
-          <img id="flower" src="/images/mix-special.jpg" alt="rose">
-        </div>
+      <div class="col-sm-12 col-lg-3">
       </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img id="flower" src="/images/mix2-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img id="flower" src="/images/rose-special.jpg" alt="rose">
+    </div>
+    <hr>
+  </section>
+  <section class="container" id="product">
+    <div class="pageDesigns">
+      <div class="designList">
+        <div class="row desSelection">
+          <div class="col-sm-6 col-md-4 productCol">
+            <div class="panel panel-default designButton">
+              <div class="panel-body">
+                <a href="#" title="The Baker Street">
+                  <img class="img-responsive center-block" src="/images/rose-birthday.jpg" alt="The Baker Street">
+                  <span class="title">
+                    Elegant
+                  </span>
+                  <span class="price">
+                    100€
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 productCol">
+              <div class="panel panel-default designButton">
+                <div class="panel-body">
+                  <a href="#" title="The Baker Street">
+                    <img class="img-responsive center-block" src="/images/mix-special.jpg" alt="The Baker Street">
+                    <span class="title">
+                      Mix
+                    </span>
+                    <span class="price">
+                      120€
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 productCol">
+                <div class="panel panel-default designButton">
+                  <div class="panel-body">
+                    <a href="#" title="The Baker Street">
+                      <img class="img-responsive center-block" src="/images/mix2-special.jpg" alt="The Baker Street">
+                      <span class="title">
+                        Deluxe
+                      </span>
+                      <span class="price">
+                        140€
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose Elegance</h5>
-          <img id="flower" src="/images/rose-birthday.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Sunset </h5>
-          <img id="flower" src="/images/mix-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img id="flower" src="/images/mix2-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img id="flower" src="/images/rose-special.jpg" alt="rose">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose Elegance</h5>
-          <img id="flower" src="/images/rose-birthday.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Sunset </h5>
-          <img id="flower" src="/images/mix-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img id="flower" src="/images/mix2-special.jpg" alt="rose">
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-3" id="single-product">
-        <div class="education-block">
-          <h5>Rose mix</h5>
-          <img id="flower" src="/images/rose-special.jpg" alt="rose">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+  <script src="/javascripts/order.js"></script>
+</div>

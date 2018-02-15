@@ -143,7 +143,7 @@ app.use((req, res, next) => {
 
 
 app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
+app.use('/', require('./routes/users'));
 app.use('/', require('./routes/auth'));
 app.use('/', require('./routes/products'));
 app.use('/stores', require('./routes/stores'));

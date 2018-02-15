@@ -11,11 +11,23 @@ const {
     ensureLoggedOut
 } = require('connect-ensure-login');
 
-router.get('/create-bouquet', ensureLoggedIn(), (req, res, next) => {
+function checkRole(role) {
+    return (req, res, next) => {
+        if (req.user.role !== role)
+            return res.redirect('/');
+        else
+            next();
+    }
+}
+
+router.get('/create-bouquet', ensureLoggedIn(), checkRole('admin'), (req, res, next) => {
     return res.render('admin/create-bouquet');
 });
 
-router.post('/bouquets', ensureLoggedIn(), upload.single('imageURL'), (req, res, next) => {
+router.post('/bouquets', ensureLoggedIn(), checkRole('admin'), (req, res, next) => {
+    if (req.user.role !== 'admin')
+        res.redirect('/');
+}, upload.single('imageURL'), (req, res, next) => {
     Catalog.findOne({
         alias: req.body.catalog
     }, (err, catalog) => {
@@ -42,9 +54,6 @@ router.post('/bouquets', ensureLoggedIn(), upload.single('imageURL'), (req, res,
             });
         });
     });
-
-
-
 });
 
 module.exports = router;

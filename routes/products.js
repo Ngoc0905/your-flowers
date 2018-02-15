@@ -19,7 +19,7 @@ router.get('/celebrations/:pageName', (req, res, next) => {
 
 
 router.get('/daily-flowers/:pageName', (req, res, next) => {
-    return res.render('pages/celebrations', {
+    return res.render('pages/daily-flowers', {
         pageName: req.params.pageName
     });
 });

@@ -8,17 +8,26 @@ $(function () {
         '<p>Store 1</p>',
         '<p>Phone: 0750353191</p>'
       ].join(''),
-      title: "1st point",
       icon: 'http://maps.google.com/mapfiles/markerA.png'
     },
     {
       lat: 48.85172663,
       lon: 2.37999916,
+      html: [
+        '<h3>Store 2</h3>',
+        '<p>Store 2</p>',
+        '<p>Phone: 0750353191</p>'
+      ].join(''),
       icon: 'http://maps.google.com/mapfiles/markerB.png'
     },
     {
       lat: 48.8418986,
       lon: 2.32506752,
+      html: [
+        '<h3>Store 3</h3>',
+        '<p>Store 3</p>',
+        '<p>Phone: 0750353191</p>'
+      ].join(''),
       icon: 'http://maps.google.com/mapfiles/markerC.png'
     }
   ];

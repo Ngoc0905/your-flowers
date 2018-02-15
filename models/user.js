@@ -7,11 +7,19 @@ const userSchema = new Schema({
         unique: true,
         required: true,
     },
-    password: String,
+    password: {
+        type: String,
+        required: true,
+    },
     orders: [{
         type: Schema.Types.ObjectId,
         ref: 'Order'
-    }]
+    }],
+    role: {
+        type: String,
+        required: true,
+        enum: ['admin', 'user']
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);
