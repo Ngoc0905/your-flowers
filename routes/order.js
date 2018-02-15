@@ -28,4 +28,8 @@ router.get('/cart', (req, res, next) => {
     });
 });
 
+router.post('/cart', (req, res, next) => {
+    return res.redirect('/profile');
+});
+
 module.exports = router;

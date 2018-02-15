@@ -7,7 +7,10 @@ const bouquetSchema = new Schema({
         required: true
     },
     description: String,
-    price: Number,
+    price: {
+        type: Number,
+        required: true   
+    },
     colors: [String],
     images: [{
         link: String,

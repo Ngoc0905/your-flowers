@@ -36,7 +36,9 @@
                     <span class="title">
                       <%= bouquets[i].name %>
                     </span>
-                    <span class="price">from £45.00</span>
+                    <span class="price">
+                      <%= bouquets[i].price %>€
+                    </span>
                   </a>
                   <button class="btn add-to-cart-btn" data-id="<%= bouquets[i]._id %>">Add to cart</button>
                 </div>
