@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Bouquet = require('../models/bouquet');
+var Order = require('../models/order');
+const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 
 router.get('/cart', (req, res, next) => {
     const idStrings = req.query.ids.split(',');
@@ -28,8 +30,39 @@ router.get('/cart', (req, res, next) => {
     });
 });
 
-router.post('/cart', (req, res, next) => {
-    return res.redirect('/profile');
+router.post('/cart', ensureLoggedIn(), (req, res, next) => {
+    var obj = {
+        buyer: req.user._id,
+        deliveryDate: req.body.deliveryDate,
+        total: req.body.total,
+        bouquets: []
+    };
+
+    req.body.bouquets.forEach(b => {
+        obj.bouquets.push({
+            quantity: b.quantity,
+            bouquet: b.id
+        });
+    });
+
+    Order.create(new Order(obj), (err) => {
+        if(err) return next(err);
+
+        User.findById(req.user._id, (err, user) => {
+            if(err) return next(err);
+
+            if(!user) throw new Error('User not found');
+
+            user.orders.push(order);
+
+            user.save(err => {
+                if(err) return next(err);
+
+                return res.redirect('/profile');
+            });
+        });
+    });
+
 });
 
 module.exports = router;

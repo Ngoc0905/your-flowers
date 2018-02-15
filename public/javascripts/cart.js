@@ -1,43 +1,65 @@
 $(function () {
     calculateTotalPrice();
 
-    $("#cart-checkout-btn").click(() => {
-        $("ul.cartErrors").html('');
-        $("ul.cartErrors").hide();
-        var validationErrors = [];
-        if (!$("#terms").is(':checked')) {
-            validationErrors.push("Please confirm you have read the Terms & Conditions");
-            $("#terms").addClass("error");
-        } else {
-            $("#terms").removeClass("error");
-        }
+    $("#date").datepicker();
 
-        if (validationErrors.length) {
-            validationErrors.forEach((e) => {
-                $("ul.cartErrors").append(`<li class="cartError">${e}</li>`);
-            });
 
-            $('ul.cartErrors').show();
-            return;
-        }
 
-        var bouquets = [];
+    // $("#cart-checkout-btn").click(() => {
 
-        $(".cartRow").each(function () {
-            var quantity = $(this).find(".bouquet-quantity").text();
-            var price = $(this).find(".price strong").text();
 
-            bouquets.push({
-                quantity: quantity,
-                id: $(this).attr("id").split('-')[1]
-            });
-        });
+    //     var bouquets = [];
+    //     var totalPrice = 0;
 
-        axios.post('/cart', bouquets).then((response) => {
-            
-        });
-    });
+    //     $(".cartRow").each(function () {
+    //         var quantity = $(this).find(".bouquet-quantity").text();
+    //         var price = $(this).find(".price strong").text();
+    //         totalPrice += parseInt(quantity) * parseInt(price);
+
+    //         bouquets.push({
+    //             quantity: quantity,
+    //             id: $(this).attr("id").split('-')[1]
+    //         });
+    //     });
+
+    //     axios.post('/cart', {
+    //         bouquets,
+    //         total: totalPrice,
+    //         deliveryDate: $('#date').val()
+    //     }).then((response) => {
+    //         console.log(response);
+    //     });
+    // });
 });
+
+function onCartSubmit(e) {
+    $("ul.cartErrors").html('');
+    $("ul.cartErrors").hide();
+    var validationErrors = [];
+    if (!$("#terms").is(':checked')) {
+        validationErrors.push("Please confirm you have read the Terms & Conditions");
+        $("#terms").addClass("error");
+    } else {
+        $("#terms").removeClass("error");
+    }
+
+    if (!$("#date").val()) {
+        validationErrors.push("Please enter a valid date");
+        $("#date").addClass("error");
+    } else {
+        $("#date").removeClass("error");
+    }
+
+    if (validationErrors.length) {
+        validationErrors.forEach((e) => {
+            $("ul.cartErrors").append(`<li class="cartError">${e}</li>`);
+        });
+
+        $('ul.cartErrors').show();
+        e.preventDefault();
+        return false;
+    }
+}
 
 function calculateTotalPrice() {
     var totalPrice = 0;
@@ -47,6 +69,7 @@ function calculateTotalPrice() {
         totalPrice += parseInt(quantity) * parseInt(price);
     });
     $("#cart-total-price").text(totalPrice + "€");
+    $("#cart-total-price-input").val(totalPrice);
 }
 
 // function removeBouquet(btn) {

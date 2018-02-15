@@ -7,7 +7,7 @@
                     
                 </ul>
 
-                <form id="shoppingBasket" name="cart" novalidate="novalidate">
+                <form id="shoppingBasket" name="cart" action="/cart" method="POST" onsubmit="return onCartSubmit(e)">
                     <h1>Your Shopping Cart</h1>
                     <div class="row cartHeader">
                         <div class="col-sm-8">
@@ -50,7 +50,7 @@
                                     <span class="bouquet-quantity">
                                         <%= b.quantity %>
                                     </span>
-                                    <button type="button" class="btn remove-from-cart-btn" onclick="removeBouquet(this)" id="flower-<%= b._id %>">
+                                    <button type="button" class="btn btn-danger remove-from-cart-btn" onclick="removeBouquet(this)" id="flower-<%= b._id %>">
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </button>
                                 </div>
@@ -59,6 +59,8 @@
                                         <%= b.price %>
                                     </strong>€
                                 </div>
+                                <input type="hidden" name="bouquet[][id]" value="<%= b._id %>">
+                                <input type="hidden" name="bouquet[][quantity]" value="<%= b.quantity %>">
                             </div>
                             <% }) } %>
                                 <div class="row discountRow">
@@ -68,6 +70,7 @@
                                     <div class="col-sm-2 discountCol">
                                         <strong id="cart-total-price"></strong>
                                     </div>
+                                    <input type="hidden" name="total" id="cart-total-price-input" value="">
                                 </div>
 
                                 <div class="row promotionRow">
@@ -87,157 +90,11 @@
                                         <div class="row">
                                             <h2>1. Select Delivery&nbsp;/&nbsp;Collection&nbsp;Date</h2>
                                             <div class="col-sm-12 col-lg-6 selectDate hasDatepicker" id="dp1518644164777">
-                                                <input type="hidden" class="required" name="date" id="date" aria-required="true">
-                                                <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;">
-                                                    <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
-                                                        <a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev">
-                                                            <span class="ui-icon ui-icon-circle-triangle-w">Prev</span>
-                                                        </a>
-                                                        <a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next">
-                                                            <span class="ui-icon ui-icon-circle-triangle-e">Next</span>
-                                                        </a>
-                                                        <div class="ui-datepicker-title">
-                                                            <span class="ui-datepicker-month">February</span>&nbsp;
-                                                            <span class="ui-datepicker-year">2018</span>
-                                                        </div>
-                                                    </div>
-                                                    <table class="ui-datepicker-calendar">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col" class="ui-datepicker-week-end">
-                                                                    <span title="Sunday">Su</span>
-                                                                </th>
-                                                                <th scope="col">
-                                                                    <span title="Monday">Mo</span>
-                                                                </th>
-                                                                <th scope="col">
-                                                                    <span title="Tuesday">Tu</span>
-                                                                </th>
-                                                                <th scope="col">
-                                                                    <span title="Wednesday">We</span>
-                                                                </th>
-                                                                <th scope="col">
-                                                                    <span title="Thursday">Th</span>
-                                                                </th>
-                                                                <th scope="col">
-                                                                    <span title="Friday">Fr</span>
-                                                                </th>
-                                                                <th scope="col" class="ui-datepicker-week-end">
-                                                                    <span title="Saturday">Sa</span>
-                                                                </th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-                                                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-                                                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-                                                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">1</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">2</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">3</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">4</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">5</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">6</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">7</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">8</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">9</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">10</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">11</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">12</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">13</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-unselectable ui-state-disabled undefined ui-datepicker-today">
-                                                                    <span class="ui-state-default">14</span>
-                                                                </td>
-                                                                <td class=" ui-datepicker-days-cell-over undefined ui-datepicker-current-day" data-handler="selectDay" data-event="click"
-                                                                    data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">15</a>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">16</a>
-                                                                </td>
-                                                                <td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">17</a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">18</span>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">19</a>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">20</a>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">21</a>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">22</a>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">23</a>
-                                                                </td>
-                                                                <td class=" ui-datepicker-week-end undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">24</a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled undefined">
-                                                                    <span class="ui-state-default">25</span>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">26</a>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">27</a>
-                                                                </td>
-                                                                <td class=" undefined" data-handler="selectDay" data-event="click" data-month="1" data-year="2018">
-                                                                    <a class="ui-state-default" href="#">28</a>
-                                                                </td>
-                                                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-                                                                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-                                                                <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                                <input type="text" class="required" name="deliveryDate" id="date">
                                             </div>
                                             <div class="col-sm-12 col-lg-6 deliveryInfo">
                                                 <p>Select the date you would like your flowers delivered&nbsp;or to collect
                                                     from our store.
-
                                                 </p>
                                                 <p>
                                                     <strong>Current Time:</strong> 09:36 PM, 14 February 2018</p>
@@ -262,10 +119,13 @@
                                         </p>
                                         <div class="buttonSection">
                                             <a class="cancel returnShopping btn btn-default" href="/">
-                                                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>&nbsp;continue shopping</a>
-                                            <button class="btn btn-primary checkout" type="button" id="cart-checkout-btn">&nbsp;CHECKOUT&nbsp;
-                                                <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-                                            </button>
+                                                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>&nbsp;continue shopping
+                                            </a>
+                                            <% if( bouquets.length !== 0 ) { %>
+                                                <button class="btn btn-primary checkout" type="submit" id="cart-checkout-btn">&nbsp;CHECKOUT&nbsp;
+                                                    <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+                                                </button>
+                                            <% } %>
                                         </div>
                                         <p class="privacy">
                                             <small>* Please note, We will never release your personal details to any other companies.

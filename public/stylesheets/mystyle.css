@@ -40,3 +40,11 @@
 input[type='checkbox'].error{
     outline: 1px solid #f00;
 }
+
+input[type='text'].error {
+    border: 1px solid #f00;
+}
+
+#date {
+    color: #333;
+}
