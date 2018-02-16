@@ -8,6 +8,7 @@ const layouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
+require("dotenv").config();
 
 const MongoStore = require('connect-mongo')(session);
 const LocalStrategy = require('passport-local').Strategy;
@@ -15,7 +16,8 @@ const User = require('./models/user.js');
 const bcrypt = require('bcrypt');
 const flash = require('connect-flash');
 
-mongoose.connect('mongodb://localhost/yourflowers');
+// mongoose.connect('mongodb://localhost/yourflowers');
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
