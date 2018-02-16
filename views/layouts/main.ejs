@@ -99,112 +99,136 @@
                                     </span>
                                 </li>
                                 <% } else { %>
-                                    <li>
-                                        <span>
-                                            <a href="/create-bouquet">Admin</a>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <a href="/profile">
-                                            <%= user.email %>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <span>
-                                            <a href="/logout">Logout</a>
-                                        </span>
-                                    </li>
-                                    <% } %>
-
-
+                                    <% if(user.role === 'admin') { %>
                                         <li>
-                                            <a class="btn btn-header" id="go-to-cart-btn" href="#">
-                                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                                                <span id="cart-item-quantity">0</span>
-                                            </a>
+                                            <span>
+                                                <a href="/create-bouquet">Admin</a>
+                                            </span>
                                         </li>
-                                        <li style="padding-left:3px;">
-                                            <a class="btn btn-header" data-toggle="collapse" href="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
-                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                            </a>
-                                        </li>
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobilenav" aria-expanded="false"
-                                            aria-controls="navbar">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                        <div class="collapse" id="collapseSearch">
-                                            <div class="well">
-                                                <div class="form-group">
-                                                    <div class="input-group">
-                                                        <input type="text" name="searchBy" id="searchBy" class="form-control" placeholder="Search">
-                                                        <div class="input-group-addon">
-                                                            <a href="javascript:goToPage();">go</a>
+                                        <% } %>
+                                            <li>
+                                                <a href="/profile">
+                                                    <%= user.email %>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    <a href="/logout">Logout</a>
+                                                </span>
+                                            </li>
+                                            <% } %>
+
+
+                                                <li>
+                                                    <a class="btn btn-header" id="go-to-cart-btn" href="#">
+                                                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                                        <span id="cart-item-quantity">0</span>
+                                                    </a>
+                                                </li>
+                                                <li style="padding-left:3px;">
+                                                    <a class="btn btn-header" data-toggle="collapse" href="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                                    </a>
+                                                </li>
+                                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobilenav" aria-expanded="false"
+                                                    aria-controls="navbar">
+                                                    <span class="sr-only">Toggle navigation</span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                </button>
+                                                <div class="collapse" id="collapseSearch">
+                                                    <div class="well">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" name="searchBy" id="searchBy" class="form-control" placeholder="Search">
+                                                                <div class="input-group-addon">
+                                                                    <a href="javascript:goToPage();">go</a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- TESTING THE MOBILE DROP DOWN -->
-                                        <div id="mobilenav" class="collapse">
-                                            <nav class="">
-                                                <div>
-                                                    <ul class="mobile-nav">
-                                                        <li class="page1">
-                                                            <a class="current" title="Home" href="/">Home</a>
-                                                        </li>
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Celebrations
-                                                                <span class="caret"></span>
-                                                            </a>
-                                                            <ul class="dropdown-menu">
-                                                                <li>
-                                                                    <a href="/celebrations/specialdays">Special days</a>
+                                                <!-- TESTING THE MOBILE DROP DOWN -->
+                                                <div id="mobilenav" class="collapse">
+                                                    <nav class="">
+                                                        <div>
+                                                            <ul class="mobile-nav">
+                                                                <li class="page1">
+                                                                    <a class="current" title="Home" href="/">Home</a>
                                                                 </li>
-                                                                <li>
-                                                                    <a href="/celebrations/congratulation">Congratulation</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="/celebrations/wedding">Wedding</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="/celebrations/launchday">Launch day</a>
-                                                                </li>
-                                                                <!-- <li>
+                                                                <li class="dropdown">
+                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Celebrations
+                                                                        <span class="caret"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li>
+                                                                            <a href="/celebrations/specialdays">Special days</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="/celebrations/congratulation">Congratulation</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="/celebrations/wedding">Wedding</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="/celebrations/launchday">Launch day</a>
+                                                                        </li>
+                                                                        <!-- <li>
                                                                     <a href="/celebrations/funeral">Funeral</a>
                                                                 </li>
                                                                 <li>
                                                                     <a href="/celebrations/other">Other</a>
                                                                 </li> -->
-                                                            </ul>
-                                                        </li>
+                                                                    </ul>
+                                                                </li>
 
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daily Flowers
-                                                                <span class="caret"></span>
-                                                            </a>
-                                                            <ul class="dropdown-menu">
+                                                                <li class="dropdown">
+                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daily Flowers
+                                                                        <span class="caret"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li>
+                                                                            <a href="/daily/company">Company</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="/daily/home">Home</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="page4">
+                                                                    <a href="/specialprice">Special price</a>
+                                                                </li>
+                                                                <li class="page5">
+                                                                    <a href="/stores">Stores</a>
+                                                                </li>
+                                                                <% if (!user) { %>
                                                                 <li>
-                                                                    <a href="/daily/company">Company</a>
+                                                                    <a href="/login">Login</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="/daily/home">Home</a>
+                                                                    <a href="/signup">Signup</a>
                                                                 </li>
+                                                                <% } else { %>
+                                                                <% if(user.role === 'admin') { %>
+                                                                    <li>
+                                                                        <a href="/create-bouquet">Admin</a>
+                                                                    </li>
+                                                                <% } %>
+                                                                    <li>
+                                                                        <a href="/profile">
+                                                                            <%= user.email %>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="/logout">Logout</a>
+                                                                    </li>
+                                                                <% } %>
                                                             </ul>
-                                                        </li>
-                                                        <li class="page4">
-                                                            <a href="/specialprice">Special price</a>
-                                                        </li>
-                                                        <li class="page5">
-                                                            <a href="/stores">Stores</a>
-                                                        </li>
-                                                    </ul>
+                                                        </div>
+                                                        <!--/.nav-collapse -->
+                                                    </nav>
                                                 </div>
-                                                <!--/.nav-collapse -->
-                                            </nav>
-                                        </div>
                         </ul>
                     </div>
                 </div>
