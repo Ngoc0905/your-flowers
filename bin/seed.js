@@ -4,9 +4,11 @@ const Catalog = require('../models/catalog');
 const Order = require('../models/order');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
+require("dotenv").config();
 
 
-mongoose.connect('mongodb://localhost/yourflowers');
+// mongoose.connect('mongodb://localhost/yourflowers');
+mongoose.connect(process.env.MONGODB_URI);
 
 Catalog.remove({}, (err) => {
     Bouquet.remove({}, (err) => {
