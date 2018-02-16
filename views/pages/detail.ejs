@@ -14,7 +14,7 @@
                     </form>
                 </div>
                 <div class="row" style="margin-bottom: 20px;">
-                    <div class="col-sm-6 detail-price">
+                    <div class="col-sm-6 ">
                         <div style="float: right;">
                             <h1>
                                 <%= bouquet.name %>
@@ -32,8 +32,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <span>
-                                <button type="button" class="btn btn-primary btnspace add-to-cart-btn" data-id="<%= bouquet.id %>">Buy</button>
+                            <span class="detail-price">
+                                <button type="button" class="btn btn-primary btnspace add-to-cart-btn " data-id="<%= bouquet.id %>">Buy</button>
                                 <a class="btn btn-default" href="javascript: history.go(-1)">Back</a>
                             </span>
                         </div>
