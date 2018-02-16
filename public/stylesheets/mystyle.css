@@ -100,3 +100,9 @@ img.grayscale {
     width: 220px;
     height: 300px;
 }
+@media (max-width: 350px){
+.detail-price {
+ margin: auto 20px;
+
+}
+};
